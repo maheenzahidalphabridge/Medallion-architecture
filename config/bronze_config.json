@@ -1,0 +1,49 @@
+{
+  "environment": "dev",
+
+  "source": {
+    "format": "json",
+    "base_path": "/Volumes/ecommerce_dev/landing/raw"
+  },
+
+  "target": {
+    "catalog": "ecommerce_dev",
+    "schema": "bronze",
+    "format": "delta"
+  },
+
+  "metadata": {
+    "schema": "metadata",
+    "control_table": "ingestion_control"
+  },
+
+  "tables": {
+    "customers": {
+      "enabled": true,
+      "load_type": "incremental",
+      "primary_key": "customer_id",
+      "watermark_column": "created_at"
+    },
+
+    "products": {
+      "enabled": true,
+      "load_type": "incremental",
+      "primary_key": "product_id",
+      "watermark_column": "created_at"
+    },
+
+    "orders": {
+      "enabled": true,
+      "load_type": "incremental",
+      "primary_key": "order_id",
+      "watermark_column": "order_date"
+    },
+
+    "order_items": {
+      "enabled": true,
+      "load_type": "incremental",
+      "primary_key": "order_item_id",
+      "watermark_column": "order_item_id"
+    }
+  }
+}
