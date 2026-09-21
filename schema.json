@@ -1,0 +1,190 @@
+{
+  "database": "ecommerce",
+  "description": "Practice OLTP e-commerce database",
+  "tables": {
+    "customers": {
+      "columns": [
+        {
+          "name": "customer_id",
+          "type": "INTEGER",
+          "constraint": "PK",
+          "nullable": false,
+          "description": "Auto-increment customer identifier"
+        },
+        {
+          "name": "first_name",
+          "type": "TEXT",
+          "constraint": "",
+          "nullable": false,
+          "description": "Customer first name"
+        },
+        {
+          "name": "last_name",
+          "type": "TEXT",
+          "constraint": "",
+          "nullable": false,
+          "description": "Customer last name"
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "constraint": "UNIQUE",
+          "nullable": false,
+          "description": "Unique customer email"
+        },
+        {
+          "name": "city",
+          "type": "TEXT",
+          "constraint": "",
+          "nullable": true,
+          "description": "Customer city"
+        },
+        {
+          "name": "state",
+          "type": "TEXT",
+          "constraint": "",
+          "nullable": true,
+          "description": "Customer state"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME",
+          "constraint": "",
+          "nullable": false,
+          "description": "Record creation timestamp"
+        }
+      ]
+    },
+    "products": {
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "constraint": "PK",
+          "nullable": false,
+          "description": "Auto-increment product identifier"
+        },
+        {
+          "name": "product_name",
+          "type": "TEXT",
+          "constraint": "",
+          "nullable": false,
+          "description": "Product name"
+        },
+        {
+          "name": "category",
+          "type": "TEXT",
+          "constraint": "",
+          "nullable": true,
+          "description": "Product category"
+        },
+        {
+          "name": "price",
+          "type": "DECIMAL(10,2)",
+          "constraint": "",
+          "nullable": false,
+          "description": "Unit price"
+        },
+        {
+          "name": "stock_quantity",
+          "type": "INTEGER",
+          "constraint": "",
+          "nullable": false,
+          "description": "Inventory quantity"
+        },
+        {
+          "name": "created_at",
+          "type": "DATETIME",
+          "constraint": "",
+          "nullable": false,
+          "description": "Record creation timestamp"
+        }
+      ]
+    },
+    "orders": {
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "INTEGER",
+          "constraint": "PK",
+          "nullable": false,
+          "description": "Auto-increment order identifier"
+        },
+        {
+          "name": "customer_id",
+          "type": "INTEGER",
+          "constraint": "FK -> customers.customer_id",
+          "nullable": false,
+          "description": "Customer placing the order"
+        },
+        {
+          "name": "order_date",
+          "type": "DATETIME",
+          "constraint": "",
+          "nullable": false,
+          "description": "Order timestamp"
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "constraint": "",
+          "nullable": false,
+          "description": "Order status"
+        },
+        {
+          "name": "payment_method",
+          "type": "TEXT",
+          "constraint": "",
+          "nullable": false,
+          "description": "Payment method"
+        },
+        {
+          "name": "total_amount",
+          "type": "DECIMAL(10,2)",
+          "constraint": "",
+          "nullable": false,
+          "description": "Calculated order total"
+        }
+      ]
+    },
+    "order_items": {
+      "columns": [
+        {
+          "name": "order_item_id",
+          "type": "INTEGER",
+          "constraint": "PK",
+          "nullable": false,
+          "description": "Auto-increment line identifier"
+        },
+        {
+          "name": "order_id",
+          "type": "INTEGER",
+          "constraint": "FK -> orders.order_id",
+          "nullable": false,
+          "description": "Parent order"
+        },
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "constraint": "FK -> products.product_id",
+          "nullable": false,
+          "description": "Purchased product"
+        },
+        {
+          "name": "quantity",
+          "type": "INTEGER",
+          "constraint": "",
+          "nullable": false,
+          "description": "Units purchased"
+        },
+        {
+          "name": "unit_price",
+          "type": "DECIMAL(10,2)",
+          "constraint": "",
+          "nullable": false,
+          "description": "Price captured at purchase time"
+        }
+      ]
+    }
+  }
+}
