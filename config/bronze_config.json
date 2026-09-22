@@ -1,0 +1,38 @@
+{
+    "environment": "dev",
+    "source": {
+        "format": "json",
+        "base_path": "/Volumes/workspace/default/landing/raw"
+    },
+    "target": {
+        "catalog": "workspace",
+        "schema": "bronze",
+        "format": "delta"
+    },
+    "metadata": {
+        "schema": "metadata",
+        "control_table": "ingestion_control"
+    },
+    "tables": {
+        "customers": {
+            "enabled": true,
+            "load_type": "incremental",
+            "watermark_column": "created_at"
+        },
+        "products": {
+            "enabled": true,
+            "load_type": "incremental",
+            "watermark_column": "created_at"
+        },
+        "orders": {
+            "enabled": true,
+            "load_type": "incremental",
+            "watermark_column": "order_date"
+        },
+        "order_items": {
+            "enabled": true,
+            "load_type": "incremental",
+            "watermark_column": "order_item_id"
+        }
+    }
+}
