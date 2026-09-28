@@ -1,0 +1,50 @@
+[
+  {
+    "category_id": "CAT001",
+    "name": "Electronics",
+    "description": "Gadgets and devices",
+    "is_active": true,
+    "created_at": "2020-01-01 00:00:00",
+    "updated_at": "2020-01-01 00:00:00"
+  },
+  {
+    "category_id": "CAT002",
+    "name": "Clothing",
+    "description": "Apparel and fashion",
+    "is_active": true,
+    "created_at": "2020-01-01 00:00:00",
+    "updated_at": "2020-01-01 00:00:00"
+  },
+  {
+    "category_id": "CAT003",
+    "name": "Home & Garden",
+    "description": "Home improvement",
+    "is_active": true,
+    "created_at": "2020-02-01 00:00:00",
+    "updated_at": "2020-02-01 00:00:00"
+  },
+  {
+    "category_id": "CAT004",
+    "name": "Sports",
+    "description": "Sporting goods",
+    "is_active": true,
+    "created_at": "2020-02-01 00:00:00",
+    "updated_at": "2020-02-01 00:00:00"
+  },
+  {
+    "category_id": "CAT005",
+    "name": "Books",
+    "description": "Books and media",
+    "is_active": true,
+    "created_at": "2020-03-01 00:00:00",
+    "updated_at": "2020-03-01 00:00:00"
+  },
+  {
+    "category_id": "CAT006",
+    "name": "Food & Beverage",
+    "description": "Grocery and drinks",
+    "is_active": false,
+    "created_at": "2020-03-01 00:00:00",
+    "updated_at": "2020-03-01 00:00:00"
+  }
+]
