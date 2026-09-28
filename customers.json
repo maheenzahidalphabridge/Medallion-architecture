@@ -693,11 +693,11 @@
     "city": "Seanhaven",
     "country": "Liechtenstein",
     "signup_date": "2022-09-26",
-    "loyalty_tier": "Gold",
-    "total_spend": 13799.7,
+    "loyalty_tier": "silver",
+    "total_spend": 6666.99,
     "is_active": false,
     "created_at": "2023-12-03 16:42:00",
-    "updated_at": "2023-12-03 16:42:00"
+    "updated_at": "2026-09-28 12:18:40"
   },
   {
     "customer_id": "CUST000057",
